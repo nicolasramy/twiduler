@@ -54,3 +54,4 @@ docs/_build/
 
 .idea
 www/twiduler/settings.py
+www/db.sqlite3
