@@ -5,7 +5,7 @@
 
 ### User <a name="users-user"></a>
 
-A user represent a single Twiduler account, it's a [User](https://docs.djangoproject.com/fr/1.9/ref/contrib/auth/#user-model) from **django.contrib.auth**
+A user represent a single Twiduler account, it's a [User](https://docs.djangoproject.com/fr/1.8/ref/contrib/auth/#user-model) from **django.contrib.auth**
 
 Name | Type | Usage | Description
 -----|------|-------|------------
@@ -25,9 +25,19 @@ date_joined | DatetimeField | Optional | A datetime designating when the account
 
 ### Group <a name="users-group"></a>
 
-A group represent a category of User, it's a [Group](https://docs.djangoproject.com/en/1.9/ref/contrib/auth/#group-model) from **django.contrib.auth**
+A group represent a category of User, it's a [Group](https://docs.djangoproject.com/en/1.8/ref/contrib/auth/#group-model) from **django.contrib.auth**
 
 Name | Type | Usage | Description
 -----|------|-------|------------
 name | Charfield | Required | 80 characters or fewer. Any characters are permitted. Example: 'Awesome Users'.
 permissions | ManyToManyField | Optional | Many-to-many field to [Permission](#users-permission)
+
+### Permission <a name="users-permission"></a>
+
+A permission represent a ..., it's a [Permission](https://docs.djangoproject.com/en/1.8/ref/contrib/auth/#django.contrib.auth.models.Permission) from **django.contrib.auth**
+
+Name | Type | Usage | Description
+-----|------|-------|------------
+name | CharField | Required | 255 characters or fewer. Example: 'Can vote'.
+content_type | ForeignKey | Required | A reference to the [django_content_type](https://docs.djangoproject.com/en/1.8/ref/contrib/contenttypes/#the-contenttype-model) database table, which contains a record for each installed model.
+codename | CharField | Required | 100 characters or fewer. Example: 'can_vote'.
